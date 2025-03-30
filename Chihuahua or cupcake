@@ -1,1 +1,8 @@
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
 
+model=Sequential()
+model.add(LSTM(units=50, activation="tanh", input_shape=(n_steps, n_features)))
+model.add(Dense(1))   #Capa de salida para la predicción
+model.compile(optimizer="adam", loss="mse")
+model.summary
